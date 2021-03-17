@@ -1,0 +1,133 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Lobster&display=swap");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lobster", cursive;
+  font-family: "Heebo", sans-serif;
+  list-style: none;
+}
+body {
+  background: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.nav {
+  height: 60px;
+  background: rgb(61, 209, 250);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 30px;
+}
+.nav .hamburger i {
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav .hamburger i:hover {
+  transform: scale(1.1);
+}
+.hamburger {
+  display: none;
+}
+.nav .logo h2 {
+  font-family: "Lobster", cursive;
+}
+.nav-links ul {
+  display: flex;
+}
+.nav-links ul li {
+  margin: 0 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-links ul li:hover {
+  color: red;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  color: rgb(1, 1, 1);
+  font-size: 2rem;
+}
+section h2 {
+  color: transparent;
+  background-image: url("https://media.giphy.com/media/PAjuJ2js7878eyCNsa/giphy.gif");
+  background-position: center;
+  -webkit-background-clip: text;
+  font-weight: 1000;
+}
+section p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .hamburger {
+    display: flex;
+    z-index: 2;
+  }
+  .nav .nav-links {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background: rgba(61, 209, 250, 0.914);
+    clip-path: circle(50px at right -50px);
+    -webkit-clip-path: circle(50px at right -50px);
+    transition: all 0.9s ease;
+  }
+  .nav .nav-links.open {
+    clip-path: circle(1100px at right -50px);
+    -webkit-clip-path: circle(1100px at right -50px);
+  }
+  .nav .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  .nav .nav-links ul li {
+    opacity: 0;
+  }
+  .nav .nav-links ul li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav .nav-links ul li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav .nav-links ul li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  .nav .nav-links ul li.fade {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  section {
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  section p {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
+}
